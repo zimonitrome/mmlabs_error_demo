@@ -19,6 +19,24 @@ param_scheduler = [
         by_epoch=False,
     )
 ]
+
+# Need to override tta_pipeline because it's too long for mlflow to log
+img_ratios = [0.5, 0.75, 1.0, 1.25, 1.5]
+tta_pipeline = [
+    dict(type='LoadImageFromFile', backend_args=None),
+    dict(
+        type='TestTimeAug',
+        transforms=[
+            [
+                dict(type='Resize', scale_factor=r, keep_ratio=True)
+                for r in img_ratios
+            ],
+            [
+                dict(type='RandomFlip', prob=0., direction='horizontal'),
+                dict(type='RandomFlip', prob=1., direction='horizontal')
+            ], [dict(type='LoadAnnotations')], [dict(type='PackSegInputs')]
+        ])
+]
 train_dataloader = dict(dataset=dict(seg_map_suffix="_gtFine_labelIds.png", img_suffix="_leftImg8bit.png.jpg"))
 val_dataloader = dict(dataset=dict(seg_map_suffix="_gtFine_labelIds.png", img_suffix="_leftImg8bit.png.jpg"))
 test_dataloader = val_dataloader
