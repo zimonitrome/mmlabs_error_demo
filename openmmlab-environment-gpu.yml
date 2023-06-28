@@ -1,0 +1,20 @@
+name: openmmlab
+channels:
+  - defaults
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.8
+  - pip=23.0.1
+  - pytorch=2.0.0
+  - torchvision=0.13.1
+  - pytorch-cuda=11.7
+  - pip:
+    - boto3==1.26.117
+    - mlflow==2.3.0
+    - openmim==0.3.7
+    - mmsegmentation==1.0.0
+    - --find-links https://download.openmmlab.com/mmcv/dist/cu117/torch2.0/index.html
+    # Use this page to upgrade mmcv https://mmcv.readthedocs.io/en/latest/get_started/installation.html
+    - mmcv==2.0.0
+    - mmengine==0.7.4

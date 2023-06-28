@@ -1,0 +1,8 @@
+name: train-mmlabs
+
+conda_env: openmmlab-environment-gpu.yml
+
+entry_points:
+  main:
+    command: |
+      python mmsegmentation/tools/train.py stdc1_4xb12-80k_cityscapes-512x1024_custom.py

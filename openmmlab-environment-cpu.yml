@@ -1,0 +1,17 @@
+name: openmmlab
+channels:
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.8
+  - pip=23.0.1
+  - pytorch=2.0.0
+  - torchvision=0.13.1
+  - cpuonly=2.0
+  - pip:
+    - mlflow==2.3.0
+    - openmim==0.3.7
+    - mmsegmentation==1.0.0
+    - mmcv==2.0.0
+    - mmengine==0.7.4
+    - boto3==1.26.117

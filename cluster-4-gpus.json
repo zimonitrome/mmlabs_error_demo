@@ -1,0 +1,20 @@
+{
+    "num_workers": 0,
+    "spark_version": "11.3.x-gpu-ml-scala2.12",
+    "spark_conf": {
+        "spark.databricks.cluster.profile": "singleNode"
+    },
+    "aws_attributes": {
+        "first_on_demand": 1,
+        "zone_id": "auto",
+        "instance_profile_arn": <your instance_profile_arn>
+    },
+    "node_type_id": "g5.12xlarge",
+    "custom_tags": {
+        "CostCenter": "pct",
+        "EnvironmentType": "live",
+        "Service": "databricks_primary",
+        "ResourceClass": "SingleNode"
+    },
+    "enable_elastic_disk": true
+}
