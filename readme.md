@@ -1,4 +1,13 @@
-1.  Install conda environment:
+0.  Clone repo and submodule:
+    ```
+    https://github.com/zimonitrome/mmlabs_error_demo.git
+    cd mmlabs_error_demo
+    git submodule update --init --recursive
+    ```
+
+1.  Optionally install conda environment.
+    **OBS: We actually only need MLFlow in order to reproduce the bug on Databricks as it will install the Conda environment on host.**
+    But to run locally you will need to install:
     ```
     conda env create -f openmmlab-environment-gpu.yml
     ```

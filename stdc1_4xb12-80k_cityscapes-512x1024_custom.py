@@ -49,3 +49,6 @@ default_hooks = dict(
 visualizer = dict(
     type="SegLocalVisualizer", vis_backends=[dict(type="MLflowVisBackend", save_dir="mlruns", artifact_suffix=(".json", ".py", "yaml", ".pth"))]
 )
+
+import os
+print(os.environ)
